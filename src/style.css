@@ -1,0 +1,96 @@
+body {
+    background-color: #dfdfdf;
+}
+
+h1 {
+    text-align: center;
+}
+
+.appTitle {
+    border: dashed 1px #2e3a51;
+    color: #2e3a51;
+    width: 40%;
+    margin: 20px auto;
+    padding: 5px;
+    text-transform: uppercase;
+}
+
+.addField {
+    width: 32%;
+    height: 35px;
+    border-radius: 3px;
+    border: solid 1px #797979;
+    margin-right: 0px;
+    padding: 0px 10px;
+}
+
+.addBtn {
+    width: 8%;
+    height: 35px;
+    margin-left: 0px;
+}
+
+.addForm {
+    text-align: center;
+    margin: 10px auto;
+}
+
+.myList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.myItem {
+    width: 40%;
+    background-color: #2797b4;
+    border-radius: 5px;
+    margin: 2px;
+    padding: 0px 10px;
+    color: #fff;
+    font-size: 17px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.myItem:hover {
+    background-color: #14748d;
+}
+
+.removeBtn {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: none;
+    background-color: #fff;
+    font-weight: 900;
+    color: #f00;
+    cursor: pointer;
+    margin: 2px;
+}
+
+.checkBtn {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: none;
+    background-color: #fff;
+    font-weight: 900;
+    color: rgb(15, 128, 0);
+    cursor: pointer;
+    margin: 2px;
+}
+
+.emtyListMessage {
+    font-style: italic;
+    color: #585858;
+    height: 170px;
+    width: 41%;
+    border: dashed 1px #585858;
+    text-align: center;
+    padding: 20px 0;
+}
