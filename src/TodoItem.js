@@ -1,14 +1,17 @@
+import { Component } from "react";
 
-const TodoItem = props => {
-    return (
-        <div className="myItem" >
-            <p style={{textDecoration: props.isDone ? 'line-through' : ''}}>{props.name}</p>
-            <div>
-                <button className="checkBtn" onClick={props.changeStatus}>&#10004;</button>
-                <button className="removeBtn" onClick={props.removeItem}>&#10005;</button>
+class TodoItem extends Component {
+    render(){
+        return (
+            <div className="myItem" >
+                <p style={{textDecoration: this.props.isDone ? 'line-through' : ''}}>{this.props.name}</p>
+                <div>
+                    <button className="checkBtn" onClick={this.props.changeStatus}>&#10004;</button>
+                    <button className="removeBtn" onClick={this.props.removeItem}>&#10005;</button>
+                </div>
             </div>
-        </div>
-    )
+        )
+    }
 }
 
 export default TodoItem;

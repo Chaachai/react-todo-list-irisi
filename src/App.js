@@ -1,40 +1,46 @@
-import React from "react";
+import React, { Component } from "react";
 import TodoForm from "./TodoForm";
 import TodoList from "./TodoList";
 
-const App = () => {
+class App extends Component {
+    constructor(props){
+        super(props);
+        this.state={
+            todos: []
+        }
+    }
 
-    const [todos, setTodos] = React.useState([])
-
-    const removeItem = id => {
-        const todosCopy = todos.filter(item => item.id !== id);
-        setTodos(todosCopy);
+    removeItem = id => {
+        const todosCopy = this.state.todos.filter(item => item.id !== id);
+        this.setState({todos: todosCopy});
     }
   
-    const changeStatus = id => {
-        const todosCopy = [...todos];
-        const myItem = todos.find(item => item.id === id);
-        const myItemIndex = todos.findIndex(item => item.id === id);
+    changeStatus = id => {
+        const todosCopy = [...this.state.todos];
+        const myItem = this.state.todos.find(item => item.id === id);
+        const myItemIndex = this.state.todos.findIndex(item => item.id === id);
         myItem.isDone = !myItem.isDone;
         todosCopy[myItemIndex] = myItem;
-        setTodos(todosCopy);
+        this.setState({todos: todosCopy});
     }
 
-    const addTodo = todoItem => {
-        setTodos([...todos, todoItem]);
+    addTodo = todoItem => {
+        this.setState({todos: [...this.state.todos, todoItem]});
     }
 
-    return (
-        <>
-            <h1 className="appTitle">TODO list</h1>
-            <TodoForm addTodo={addTodo} />
-            <TodoList 
-                todos={todos} 
-                changeStatus={changeStatus} 
-                removeItem={removeItem}
-            />
-        </>
-    )  
+    render () {
+        return (
+            <>
+                <h1 className="appTitle">TODO list</h1>
+                <TodoForm addTodo={this.addTodo} />
+                <TodoList 
+                    todos={this.state.todos} 
+                    changeStatus={this.changeStatus} 
+                    removeItem={this.removeItem}
+                />
+            </>
+        )
+    }
 }
 
 export default App;
